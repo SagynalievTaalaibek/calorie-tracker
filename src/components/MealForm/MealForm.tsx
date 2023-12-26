@@ -3,7 +3,7 @@ import { MealFormInterface } from '../../types';
 import { meals } from '../../constant';
 
 interface Props {
-  isEdit?: boolean;
+  isEdit: boolean;
   isLoading?: boolean;
   meal: MealFormInterface;
   onFormSubmit: (event: React.FormEvent) => void;
