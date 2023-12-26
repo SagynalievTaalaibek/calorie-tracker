@@ -59,7 +59,7 @@ const Home = () => {
   };
 
   const onEditCard = (id: string) => {
-    console.log('Edit ', id);
+    navigate('meals/' + id + '/edit');
   };
 
   return (

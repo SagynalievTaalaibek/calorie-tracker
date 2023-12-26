@@ -1,9 +1,3 @@
-export interface MealFormInterface {
-  meal: string;
-  description: string;
-  calorie: number;
-}
-
 export interface ApiMeals {
   meal: string;
   description: string;

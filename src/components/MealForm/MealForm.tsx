@@ -1,12 +1,12 @@
 import React from 'react';
-import { MealFormInterface } from '../../types';
-import { meals } from '../../constant';
 import ButtonSpinner from '../Spinner/ButtonSpinner';
+import { ApiMeals } from '../../types';
+import { meals } from '../../constant';
 
 interface Props {
   isEdit: boolean;
   isLoading?: boolean;
-  meal: MealFormInterface;
+  meal: ApiMeals;
   onFormSubmit: (event: React.FormEvent) => void;
   onChange: (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,

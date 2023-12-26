@@ -1,8 +1,8 @@
 import React from 'react';
-import { MealFormInterface } from '../../types';
+import { Meals } from '../../types';
 
 interface Props {
-  meal: MealFormInterface;
+  meal: Meals;
   onDeleteCard: React.MouseEventHandler;
   onEditCard: React.MouseEventHandler;
 }
