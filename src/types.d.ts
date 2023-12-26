@@ -4,8 +4,14 @@ export interface MealFormInterface {
   calorie: number;
 }
 
+export interface ApiMeals {
+  meal: string;
+  description: string;
+  calorie: string;
+}
+
 export interface MealsList {
-  [id: string]: MealFormInterface;
+  [id: string]: ApiMeals;
 }
 
 export interface Meals {

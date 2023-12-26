@@ -19,6 +19,7 @@ const AddEditForm = () => {
   const createMeal = async (meal: MealFormInterface) => {
     try {
       setLoading(true);
+      console.log(meal);
       await axiosApi.post('calorie.json', meal);
       navigate('/');
     } finally {
