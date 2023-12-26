@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 import { useCallback, useEffect, useState } from 'react';
-import MealCard from '../../components/MealCard/MealCard';
-import { Meals, MealsList } from '../../types';
 import axiosApi from '../../axiosApi';
+import MealCard from '../../components/MealCard/MealCard';
 import Spinner from '../../components/Spinner/Spinner';
+import { Meals, MealsList } from '../../types';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -45,8 +45,17 @@ const Home = () => {
     return sum + meal.calorie;
   }, 0);
 
-  const onDeleteCard = (id: string) => {
-    console.log('Delete ', id);
+  const onDeleteCard = async (id: string) => {
+    setLoading(true);
+    try {
+      const answer = confirm('Do yoy really want delete?');
+      if (answer) {
+        await axiosApi.delete('calorie/' + id + '.json');
+        setMeals((prevState) => prevState.filter((value) => value.id !== id));
+      }
+    } finally {
+      setLoading(false);
+    }
   };
 
   const onEditCard = (id: string) => {

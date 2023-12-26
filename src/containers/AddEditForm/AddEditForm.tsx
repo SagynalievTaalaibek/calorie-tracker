@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { MealFormInterface } from '../../types';
-import MealForm from '../../components/MealForm/MealForm';
 import { useNavigate, useParams } from 'react-router-dom';
-import Spinner from '../../components/Spinner/Spinner';
 import axiosApi from '../../axiosApi';
+import MealForm from '../../components/MealForm/MealForm';
+import Spinner from '../../components/Spinner/Spinner';
+import { MealFormInterface } from '../../types';
 
 const AddEditForm = () => {
   const [meal, setMeal] = useState<MealFormInterface>({
@@ -65,6 +65,7 @@ const AddEditForm = () => {
           onChange={(event) => onMealChange(event)}
           onSelectChange={(event) => onCalorieChange(event)}
           onFormSubmit={(event) => onFormSubmit(event)}
+          isLoading={loading}
           isEdit={isEdit}
         />
       )}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { MealFormInterface } from '../../types';
 import { meals } from '../../constant';
+import ButtonSpinner from '../Spinner/ButtonSpinner';
 
 interface Props {
   isEdit: boolean;
@@ -69,6 +70,7 @@ const MealForm: React.FC<Props> = ({
         className="btn btn-primary mt-2"
         disabled={isLoading}
       >
+        {isLoading && <ButtonSpinner />}
         Save
       </button>
     </form>
